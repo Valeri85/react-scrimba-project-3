@@ -1,0 +1,201 @@
+:root {
+	--color-white: rgb(255, 255, 255);
+	--color-bg-body: rgb(229, 229, 229);
+
+	--color-font-title: rgba(0, 0, 0, 1);
+	--color-font-text: rgba(34, 34, 34, 1);
+	--color-font-accent: rgb(145, 142, 155);
+
+	--shadow: rgba(0, 0, 0, 0.1);
+
+	--font-weight-300: 300;
+	--font-weight-400: 400;
+	--font-weight-600: 600;
+
+	--font-family: 'Poppins', sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html {
+	font-family: var(--font-family);
+	font-weight: var(--font-weight-300);
+	font-size: 62.5%;
+	/*
+    1rem = 16px
+    1rem * 62.5% = 10px
+    If all font sizes = 62.5% than rem * 0.625
+    1rem = 10px; 0.1rem = 1px; 2.4rem = 24px...      
+    */
+	color: var(--color-font-text);
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	width: 100%;
+	min-height: 100vh;
+	font-size: 1.6rem;
+	line-height: 1.6;
+	text-rendering: optimizeSpeed;
+}
+
+/* Remove default margin and paddings */
+body,
+h1,
+p,
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+/* Make images easier to work with */
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* poppins-300 - latin */
+@font-face {
+	font-family: 'Poppins';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 300;
+	src: local(''), url('../assets/fonts/poppins-v19-latin-300.woff2') format('woff2'),
+		url('../assets/fonts/poppins-v19-latin-300.woff') format('woff');
+}
+
+/* poppins-regular - latin */
+@font-face {
+	font-family: 'Poppins';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400;
+	src: local(''), url('../assets/fonts/poppins-v19-latin-regular.woff2') format('woff2'),
+		url('../assets/fonts/poppins-v19-latin-regular.woff') format('woff');
+}
+
+/* poppins-600 - latin */
+@font-face {
+	font-family: 'Poppins';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 600;
+	src: local(''), url('../assets/fonts/poppins-v19-latin-600.woff2') format('woff2'),
+		url('../assets/fonts/poppins-v19-latin-600.woff') format('woff');
+}
+
+/* Global Start */
+.header,
+.cards {
+	padding: 2em;
+}
+/* Global End */
+
+/* Body */
+body {
+	display: grid;
+	place-items: center;
+	padding-block: 2em;
+	background-color: var(--color-bg-body);
+}
+
+/* Wrapper */
+#root {
+	max-width: 34.375em;
+	padding-bottom: 2em;
+	background-color: var(--color-white);
+	border-radius: 0.5em;
+	overflow: hidden;
+}
+
+/* Navigation */
+.nav {
+	padding: 1.5em 2em;
+	box-shadow: 0 7.5px 7.5px -5px var(--shadow);
+}
+
+/* Header */
+.header__img {
+	margin: auto;
+}
+
+.header__title {
+	margin: 0.75em 0 0.5em;
+	font-size: 3.6rem;
+	color: var(--color-font-title);
+}
+
+.header__text {
+	line-height: 1.1;
+	width: 35ch;
+}
+
+/* Card */
+.cards {
+	display: flex;
+	gap: 1.25em;
+	overflow-x: auto;
+}
+
+.card {
+	flex: 0 0 auto;
+	position: relative;
+	font-size: 1.2rem;
+}
+
+.card__status {
+	position: absolute;
+	inset: 0.5em auto auto 0.5em;
+	padding: 0.25em 0.5em;
+	background-color: var(--color-white);
+	border-radius: 0.25em;
+	font-size: 1rem;
+	font-weight: var(--font-weight-400);
+	text-transform: uppercase;
+}
+
+.card__img {
+	margin-bottom: 0.5em;
+}
+
+.card__rating-icon {
+	display: inline-block;
+	margin-right: 0.35em;
+}
+
+.card__rating-light {
+	font-weight: var(--font-weight-300);
+	color: var(--color-font-accent);
+}
+
+.card__name {
+	margin-block: 0.15em;
+}
+
+.card__price-bold {
+	font-weight: var(--font-weight-600);
+}
